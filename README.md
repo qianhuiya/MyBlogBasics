@@ -1,4 +1,4 @@
-# EsunR-Blog 通用网站导航
+# SongQiEn-Blog 通用网站导航
 
 ## About | 关于
 
@@ -10,8 +10,8 @@
 
 页面分为两部分，一个是全屏的展示页，一个是导航抽屉页，阅读下面的“使用方法”来为您的网站配置基本信息与导航信息，[点击查看网站示例](https://qianhuiya.github.io/)。
 
-![](http://markdown.img.esunr.xyz/show.png)
-![](http://markdown.img.esunr.xyz/show.png)
+![](https://i1.fuimg.com/729639/4eb2ef867c2d49c5.png)
+![](https://i1.fuimg.com/729639/f9f5b430dfcac45e.png)
 
 ## How to use | 使用方法
 
