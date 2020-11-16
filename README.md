@@ -8,7 +8,7 @@
 
 这是一个基于 Vue 的通用网站导航页面，你可以将其放在个人网站的首页作为您博客的引导页面或者是您其他项目的引导页。兼容了多平台的显示效果（基于Flex布局），方便游客浏览您的个人网站，背景图来自于Bing每日图片。
 
-页面分为两部分，一个是全屏的展示页，一个是导航抽屉页，阅读下面的“使用方法”来为您的网站配置基本信息与导航信息，[点击查看网站示例](https://www.esunr.xyz)。
+页面分为两部分，一个是全屏的展示页，一个是导航抽屉页，阅读下面的“使用方法”来为您的网站配置基本信息与导航信息，[点击查看网站示例](https://qianhuiya.githuub.io/)。
 
 ![](http://markdown.img.esunr.xyz/show.png)
 
@@ -37,60 +37,102 @@ npm run serve
 在 `/src/config.js` 存放了项目的基本配置信息，配置示例如下：
 
 ```js
-const SERVE = true; // 是否使用线上服务器
+const SERVE = false; // 是否使用线上服务器
 
-const HOST = "https://esunr.xyz:8080/api/esunrIndex"; // 线上服务器地址，如果不使用请留空
+const HOST = ""; // 线上服务器地址，如果不使用请留空
 
-const BLOG_NAME = "EsunR-Blog"; // 个人网站名字
+const BLOG_NAME = "Song-QiEn"; // 个人网站名字
 
-const BLOG_URL = "https://www.esunr.xyz/blog/"; // 个人网站链接（请填写完整链接）
+const BASICS_LOGO = "https://i2.tiimg.com/729639/a15b88932e446a70.png" //引导页默认LOGO,此项添加需将下一项置为空,本地照片引用require
+const LOGO_CENTER = ""; //更换引导页LOGO
 
-const GITHUB = "https://github.com/EsunR"; // 右上角 Github 图标链接，留空不显示
+//  已有图标库@mdi/font&font-awesome,如若找不到所要的图标,推荐iconfont阿里巴巴矢量图标库
+const LOGO_TOP_RIGHT = [    //右上角图标链接，留空不显示
+  { class: "fa fa fa-github", title: "github", url: "https://github.com/qianhuiya" },
+  { class: "iconfont icon-gitee-fill-round", title: "gitee", url: "https://gitee.com/qianhuiya" }
+]
 
-const BACKGROUND_IMG_URL = ""; // 背景图片url，留空默认为必应每日图片
+const BLOG_URL = "https://qianhuiya.gitee.io"; // 个人网站链接（请填写完整链接）
 
-const SORT_DATA = [
-  { sortId: 1, title: "示例分类1" },
-  { sortId: 2, title: "示例分类2" }
-]; // 网站分类列表，请按照API.md中'/getSort'接口中返回的data格式填写
+const BACKGROUND_IMG_URL = [    // 背景图片url,留空为默认背景色
+  "https://i1.fuimg.com/729639/3ad10bcd8f7d4f81.jpg",
+  "https://i1.fuimg.com/729639/aa108f67c64ccf4b.jpg",
+  "https://i1.fuimg.com/729639/a85ee5b40c9e4ae8.jpg",
+  "https://i1.fuimg.com/729639/36f1104c8677ba2b.jpg",
+  "https://i1.fuimg.com/729639/baa837ef4257e592.jpg",
+  "https://i1.fuimg.com/729639/7728fce9de1d3970.jpg"
+];
+
+const SLOGAN = [  // Logo下方显示的标题
+  "我们都留在美丽的经年",
+  "还有温度,还似迷途",
+  "我追着风  抓不住一个梦",
+  "你说幸福会缤纷",
+  "那些期盼在渐行渐远",
+  "多少次跌跌撞撞才学会坚强"
+];
 
 const RECORD_NUMBER = ""; // 网站备案号，留空不显示
+
+const FOOTER_INFO = true; // 是否显示抽屉右下角的文字信息
+
+const BASICS_ICONFONT = "https://i1.fuimg.com/729639/73a88a33ab843bd3.png" //默认图标
+
+const SORT_DATA = [ // 网站分类列表，请按照API.md中'/getSort'接口中返回的data格式填写
+  { sortId: 1, title: "MyFavorite" },
+  { sortId: 2, title: "AboutMe" }
+];
 
 const PAGES_DATA = [
   {
     pageId: 1,
     sortId: 1,
-    title: "主标题",
-    subtitle: "副标题",
+    title: "翻译",
+    subtitle: "百度翻译",
+    url: "https://fanyi.baidu.com/translate?aldtype=16047&query=&keyfrom=baidu&smartresult=dict&lang=auto2zh#auto/zh/",
+    icon: "",
+  },
+  {
+    pageId: 2,
+    sortId: 1,
+    title: "花瓣",
+    subtitle: "图片素材网",
+    url: "https://huaban.com/",
+    icon: "",
+  }, {
+    pageId: 3,
+    sortId: 1,
+    title: "CSDN",
+    subtitle: "开发者社区",
     url: "http://www.YourWebPage.com/",
-    icon: ""
+    icon: "",
+  }, {
+    pageId: 4,
+    sortId: 1,
+    title: "Github",
+    subtitle: "Github",
+    url: "https://github.com/",
+    icon: "",
+  }, {
+    pageId: 1,
+    sortId: 2,
+    title: "Github",
+    subtitle: "Song-QiEn  Github",
+    url: "https://qianhuiya.github.io/",
+    icon: "http://i1.fuimg.com/729639/41efabb79a58bcd4.png",
   },
   {
     pageId: 2,
     sortId: 2,
-    title: "主标题",
-    subtitle: "副标题",
-    url: "http://www.YourWebPage.xyz/",
-    icon: ""
+    title: "Gitee",
+    subtitle: "Song-QiEn  Gitee",
+    url: "https://gitee.com/qianhuiya/",
+    icon: "https://i1.fuimg.com/729639/8397da6493ce8e09.jpg",
   }
 ]; // 网站分类列表，请按照API.md中'/getPages'接口中返回的data格式填写
+//无icon图标则为默认图标-BASICS_ICONFONT
 
-const SLOGAN = [
-  "欢迎拜访",
-  "歡迎拜訪",
-  "Welcome, my friend!",
-  "訪問へようこそ",
-  "嗨，别来无恙",
-  "不忘初心，一生浪漫",
-  "最近还好吗？",
-  "流星，落花，萤火",
-  "马车越空，晃荡越响"
-]; // 在Logo下方显示的标题
-
-const FOOTER_INFO = true; // 是否显示抽屉右下角的文字信息
 ```
-
-另外在编译前，你需要将 `/src/assets/logo.svg` 替换为你的网站LOGO，注意格式必须为 `svg` 文件，同时将 `/oublic/favicon.ico` 替换为你网站的 favicon。
 
 ### 2. 添加服务器支持（可选）
 如果想要使用后台服务器来加加载和管理数据，请将 `SERVE` 设置为 `true` 并将 `HOST` 填写为你的服务器接口地址，这样前台页面就会使用Ajax来向你添加的服务器地址来请求数据。同时你需要按照 [API.md](./API.md) 规范来编写后台API接口，以及按照 [DataBase.md](./DataBase.md) 规范来创建数据库。
@@ -108,15 +150,6 @@ $ npm run build
 
 ## Log | 更新日志
 
-2020.06.20:
+2020.11.:
 
-- 修复：移除 Store 层的残余代码
-
-2020.03.29:
-
-- 优化：移除了 yarn 安装方式
-- 优化：移除了 Vuex
-- 修复：替换了获取必应每日图片的 api
-- 新增：支持添加个人网站备案号
-- 新增：集成 Better-Scroll，使抽屉页面可以上下滑动
-- 变更：抽屉打开后，取消了下滑关闭抽屉的操作手势（因为会与抽屉的滑动操作产生冲突）
+- 变化：动态添加右上角徽标,每次进入切换不同背景图
