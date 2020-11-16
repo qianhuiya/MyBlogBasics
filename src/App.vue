@@ -11,9 +11,10 @@ export default {
   },
   created() {
     //this.stopF5Refresh();
-  },methods:{
+  },
+  methods: {
     stopF5Refresh() {
-      document.onkeydown = function(e) {
+      document.onkeydown = function (e) {
         var evt = window.event || e;
         var code = evt.keyCode || evt.which;
         //屏蔽F1---F12
@@ -27,7 +28,7 @@ export default {
         }
       };
       //禁止鼠标右键菜单
-      document.oncontextmenu = function(e) {
+      document.oncontextmenu = function (e) {
         return false;
       };
       //阻止后退的所有动作，包括 键盘、鼠标手势等产生的后退动作。
@@ -35,9 +36,8 @@ export default {
       // window.addEventListener("popstate", function() {
       //   history.pushState(null, null, window.location.href);
       // });
-
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -51,6 +51,7 @@ export default {
 html,
 body {
   min-height: 100%;
+  user-select: none;
   margin: 0;
   padding: 0;
 }

@@ -30,7 +30,7 @@
               <img
                 :src="
                   item.icon == ''
-                    ? 'http://i1.fuimg.com/729639/f67cc02e94b8c44b.png'
+                    ? $config.BASICS_ICONFONT
                     : item.icon
                 "
               />
@@ -40,8 +40,8 @@
       </transition-group>
     </div>
     <div class="footer" v-if="$config.FOOTER_INFO">
-      <i class="mdi mdi-fountain-pen-tip"></i> Designed By
-      <a :href="this.$config.GITHUB">{{ this.$config.BLOG_NAME }}</a>
+      <i class="mdi mdi-fountain-pen-tip"></i> Designed By1
+      <a :href="$config.LOGO_TOP_RIGHT[0].url">{{ $config.BLOG_NAME }}</a>
     </div>
   </div>
 </template>
@@ -231,8 +231,10 @@ export default {
           height: 100%;
           cursor: pointer;
           text-decoration: none;
+          transition: all .3s ease-in-out;
           &:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.1);
+            transform:scale(1.05);
           }
           .left {
             width: 80%;
@@ -260,6 +262,7 @@ export default {
             img {
               width: 100%;
               height: 100%;
+              border-radius:50%;
             }
           }
         }

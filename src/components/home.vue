@@ -7,12 +7,14 @@
       style="width: 100%; height: 100%; z-index: 999; position: absolute"
     ></div>
 
-    <!-- github 徽标 -->
-    <a
-      v-if="$config.GITHUB"
-      class="github mdi mdi-github-circle"
-      :href="$config.GITHUB"
-    ></a>
+    <!-- 徽标 -->
+    <div class="logo">
+      <a  v-for="(item,index) of $config.LOGO_TOP_RIGHT" :key='index'
+        :class="item.class"
+        :href="item.url"
+        :title="item.title"
+      ></a>
+    </div>
 
     <!-- 中间LOGO部分 -->
     <div
@@ -23,11 +25,13 @@
       <div class="inner" style="cursor: pointer" @click="goToBlog">
         <img
           :class="['Q_logo', { Q_logo_top: flag }]"
-          src="../assets/logo.jpg"
+          :src="$config.LOGO_CENTER == '' ? $config.BASICS_LOGO : $config.LOGO_CENTER"
         />
         <div :class="['hello', { hello_bottom: flag }]">
           <div>{{ slogan[i] }}</div>
-          <div class="hello_bottom_text">点击以访问 ♥ {{ $config.BLOG_NAME }}</div>
+          <div class="hello_bottom_text">
+            点击以访问 ♥ {{ $config.BLOG_NAME }}
+          </div>
         </div>
       </div>
     </div>
@@ -51,7 +55,7 @@
     <a
       class="record_number"
       :class="{ record_number_show: flag }"
-      href="http://beian.miit.gov.cn/"
+      href=""
       v-if="recordNumber"
       >{{ recordNumber }}</a
     >
@@ -182,15 +186,22 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  .github {
-    display: block;
+  .logo {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 10px;
-    color: white;
-    font-size: 2rem;
-    z-index: 1;
-    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    z-index: 9;
+    a {
+      margin:0 2px;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
   }
   .wrapper {
     background-size: cover !important;
@@ -244,7 +255,7 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #fda085;
+    background-color: #9f85fd;
     overflow: hidden;
     transition: all 0.5s;
   }
