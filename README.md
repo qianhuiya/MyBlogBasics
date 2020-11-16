@@ -10,7 +10,7 @@
 
 页面分为两部分，一个是全屏的展示页，一个是导航抽屉页，阅读下面的“使用方法”来为您的网站配置基本信息与导航信息，[点击查看网站示例](https://qianhuiya.github.io/)。
 
-![](https://i1.fuimg.com/729639/4eb2ef867c2d49c5.png)
+![](https://i2.tiimg.com/729639/e901cc2f218d5e32.png)
 ![](https://i1.fuimg.com/729639/f9f5b430dfcac45e.png)
 
 ## How to use | 使用方法
