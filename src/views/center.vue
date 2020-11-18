@@ -28,11 +28,7 @@
             </div>
             <div class="right">
               <img
-                :src="
-                  item.icon == ''
-                    ? $config.BASICS_ICONFONT
-                    : item.icon
-                "
+                :src="item.icon == '' ? $config.BASICS_ICONFONT : item.icon"
               />
             </div>
           </a>
@@ -40,7 +36,7 @@
       </transition-group>
     </div>
     <div class="footer" v-if="$config.FOOTER_INFO">
-      <i class="mdi mdi-fountain-pen-tip"></i> Designed By1
+      <i class="mdi mdi-fountain-pen-tip"></i> Designed By
       <a :href="$config.LOGO_TOP_RIGHT[0].url">{{ $config.BLOG_NAME }}</a>
     </div>
   </div>
@@ -173,12 +169,14 @@ export default {
 
 <style lang="scss" scoped>
 #center {
+  background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
   width: 100%;
   height: 100%;
   display: block;
   box-sizing: border-box;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   position: relative;
@@ -191,26 +189,33 @@ export default {
     padding: 0 0.5rem;
     .nav_wrap {
       display: flex;
+      // align-content: center;
       .nav_item {
         margin-right: 15px;
         font-size: 0.9rem;
-        color: rgb(17, 17, 17);
+        color: rgb(0, 0, 0);
         cursor: pointer;
         transition: all 0.3s;
-        border-bottom: 2px solid rgba(0, 0, 0, 0);
+        border-bottom: 2px solid rgba(255, 255, 255, 0);
         padding-bottom: 10px;
         margin-bottom: 10px;
+        transition: all 0.6s ease-in-out;
       }
       .active {
-        border-bottom: 2px solid rgb(241, 36, 36);
-        color: rgb(10, 6, 243);
+        border-bottom: 2px solid rgb(236, 6, 217);
+        color: rgba(0,0,0,1);
+        font-size: 1.02rem;
       }
     }
     .close {
-      font-size: 1.2rem;
-      position: relative;
-      top: -5px;
       cursor: pointer;
+      transition: all .6s ease-in-out;
+      display:flex;
+      align-items: center;
+      font-size:1.8rem;
+      &:hover{
+        transform: rotate(360deg);
+      }
     }
   }
   .scroll-wrapper.main {
@@ -222,7 +227,7 @@ export default {
       .page_item {
         height: 120px;
         .page {
-          background-color: rgba(255, 255, 255,.9);
+          background-color: rgba(255, 255, 255, 0.9);
           padding: 1rem;
           box-sizing: border-box;
           border-radius: 0.5rem;
@@ -231,10 +236,10 @@ export default {
           height: 100%;
           cursor: pointer;
           text-decoration: none;
-          transition: all .3s ease-in-out;
+          transition: all 0.3s ease-in-out;
           &:hover {
             box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.1);
-            transform:scale(1.05);
+            transform: scale(1.05);
           }
           .left {
             width: 80%;
@@ -262,7 +267,7 @@ export default {
             img {
               width: 100%;
               height: 100%;
-              border-radius:50%;
+              border-radius: 50%;
             }
           }
         }

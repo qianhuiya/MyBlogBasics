@@ -16,9 +16,9 @@ const LOGO_TOP_RIGHT = [    //右上角图标链接，留空不显示
 const BLOG_URL = "https://qianhuiya.gitee.io"; // 个人网站链接（请填写完整链接）
 
 const BACKGROUND_IMG_URL = [    // 背景图片url,留空为默认背景色
+  "https://i1.fuimg.com/729639/a85ee5b40c9e4ae8.jpg",
   "https://i1.fuimg.com/729639/3ad10bcd8f7d4f81.jpg",
   "https://i1.fuimg.com/729639/aa108f67c64ccf4b.jpg",
-  "https://i1.fuimg.com/729639/a85ee5b40c9e4ae8.jpg",
   "https://i1.fuimg.com/729639/36f1104c8677ba2b.jpg",
   "https://i1.fuimg.com/729639/baa837ef4257e592.jpg",
   "https://i1.fuimg.com/729639/7728fce9de1d3970.jpg"
@@ -74,7 +74,7 @@ const PAGES_DATA = [
     subtitle: "Github",
     url: "https://github.com/",
     icon: "",
-  }, {
+  },{
     pageId: 1,
     sortId: 2,
     title: "Github",

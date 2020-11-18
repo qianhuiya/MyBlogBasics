@@ -9,7 +9,9 @@
 
     <!-- 徽标 -->
     <div class="logo">
-      <a  v-for="(item,index) of $config.LOGO_TOP_RIGHT" :key='index'
+      <a
+        v-for="(item, index) of $config.LOGO_TOP_RIGHT"
+        :key="index"
         :class="item.class"
         :href="item.url"
         :title="item.title"
@@ -25,12 +27,17 @@
       <div class="inner" style="cursor: pointer" @click="goToBlog">
         <img
           :class="['Q_logo', { Q_logo_top: flag }]"
-          :src="$config.LOGO_CENTER == '' ? $config.BASICS_LOGO : $config.LOGO_CENTER"
+          :src="
+            $config.LOGO_CENTER == ''
+              ? $config.BASICS_LOGO
+              : $config.LOGO_CENTER
+          "
         />
         <div :class="['hello', { hello_bottom: flag }]">
           <div>{{ slogan[i] }}</div>
           <div class="hello_bottom_text">
-            点击以访问 ♥ {{ $config.BLOG_NAME }}
+            <div>点击以访问 -</div>
+            <div class="print">{{ $config.BLOG_NAME }}</div>
           </div>
         </div>
       </div>
@@ -112,7 +119,7 @@ export default {
     goToBlog() {
       window.location.href = this.$config.BLOG_URL;
     },
-    _jieliu(callback, delay) {
+    throttleFn(callback, delay) {
       let currentTime = new Date();
       if (currentTime - this.startTime > delay) {
         callback();
@@ -125,7 +132,7 @@ export default {
         if (!this.centerShow) {
           this.centerShow = true;
         } else {
-          this._jieliu(() => {
+          this.throttleFn(() => {
             this.$refs.center.scroller.scrollBy(
               0,
               100,
@@ -139,7 +146,7 @@ export default {
         if (!this.centerShow) {
           return;
         } else {
-          this._jieliu(() => {
+          this.throttleFn(() => {
             this.$refs.center.scroller.scrollBy(
               0,
               -100,
@@ -192,11 +199,11 @@ export default {
     right: 10px;
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     z-index: 9;
     a {
-      margin:0 2px;
+      margin: 0 2px;
       color: #fff;
       font-size: 2rem;
       cursor: pointer;
@@ -244,6 +251,25 @@ export default {
           margin-top: 0.5rem;
           padding-top: 0.5rem;
           border-top: 1px solid #fff;
+          display: flex;
+          justify-content: center;
+          .print {
+            width: 85px;
+            white-space: nowrap;
+            overflow: hidden;
+            -webkit-animation: qisong 3s steps(60, end) infinite;
+            animation: qisong 5s steps(50, end) infinite;
+          }
+          @-webkit-keyframes qisong {
+            from {
+              width: 0;
+            }
+          }
+          @keyframes qisong {
+            from {
+              width: 0;
+            }
+          }
         }
       }
     }
@@ -323,8 +349,19 @@ export default {
     transform: translateY(0px);
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
   #home {
+    .wrapper {
+      .inner {
+        .hello_bottom {
+          .hello_bottom_text {
+            .print {
+              width: 75px;
+            }
+          }
+        }
+      }
+    }
     .center_wrapper {
       .center_inner {
         width: 100%;
