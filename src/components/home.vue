@@ -99,6 +99,7 @@ export default {
     this.startTime = new Date();
     return {
       i: 0,
+      flagEquipment:"",
       flag: false, // 动画是否播放完毕
       slogan: [],
       imgUrls: [],
@@ -116,7 +117,11 @@ export default {
     },
   },
   methods: {
-    goToBlog() {
+    //App.vue
+isMobile() {
+	   	this.flagEquipment = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+	   },
+goToBlog() {
       window.location.href = this.$config.BLOG_URL;
     },
     throttleFn(callback, delay) {
@@ -168,11 +173,16 @@ export default {
     },
   },
   mounted() {
+    this.isMobile();
     setTimeout(() => {
       this.flag = true;
     }, 1300);
     // 图片懒加载
-    this.imgUrls = this.$config.BACKGROUND_IMG_URL;
+    if(!this.flagEquipment){
+          this.imgUrls = this.$config.BACKGROUND_IMG_URL;
+    }else{
+        this.imgUrls=this.$config.BACKGROUND_IMG_URL_PHONE;
+    }
     this.imgUrl = this.imgUrls[randomNum(0, this.imgUrls.length - 1)];
     var img = new Image();
     img.src = this.imgUrls[randomNum(0, this.imgUrls.length - 1)];
