@@ -1,4 +1,4 @@
-# SongQiEn-Blog 通用网站导航
+#  通用个人博客导航
 
 ## About | 关于
 
