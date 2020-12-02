@@ -27,14 +27,14 @@ const BACKGROUND_IMG_URL = [    // 背景图片url
 ];
 
 const BACKGROUND_IMG_URL_PHONE = [
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/1.33nwnsqcxus0.JPG",
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/blog/7.4d7bzgsdgvq0.png",
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/blog/8.6dq7cz556f00.png",
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/2.66e4gp8iifk0.png",
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/3.2vhw6a3rxay0.png",
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/4.5sqhr7w4xpo0.png",
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/5.436ra117dhq0.png",
-    "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/6.1xj61dnmfaw0.jpg"
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/1.33nwnsqcxus0.JPG",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/blog/7.4d7bzgsdgvq0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/blog/8.6dq7cz556f00.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/2.66e4gp8iifk0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/3.2vhw6a3rxay0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/4.5sqhr7w4xpo0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/5.436ra117dhq0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/phone/6.1xj61dnmfaw0.jpg"
 ]
 
 const SLOGAN = [  // Logo下方显示的标题
@@ -56,51 +56,96 @@ const SORT_DATA = [ // 网站分类列表，请按照API.md中'/getSort'接口�
   { sortId: 2, title: "AboutMe" }
 ];
 
+const AUTHOR = "Song-QiEn";
+
 const PAGES_DATA = [
   {
     pageId: 1,
     sortId: 1,
-    title: "翻译",
+    title: "百度翻译",
     subtitle: "百度翻译",
     url: "https://fanyi.baidu.com/translate?aldtype=16047&query=&keyfrom=baidu&smartresult=dict&lang=auto2zh#auto/zh/",
-    icon: "",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/4.6sv3r4fabeg0.png",
   },
   {
     pageId: 2,
     sortId: 1,
-    title: "花瓣",
+    title: "花瓣网",
     subtitle: "图片素材网",
     url: "https://huaban.com/",
-    icon: "",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/5.7642at7umy80.png",
   }, {
     pageId: 3,
     sortId: 1,
     title: "CSDN",
     subtitle: "开发者社区",
     url: "http://www.YourWebPage.com/",
-    icon: "",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/6.4fyhi367hb00.png",
   }, {
     pageId: 4,
     sortId: 1,
     title: "Github",
     subtitle: "Github",
     url: "https://github.com/",
-    icon: "",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/2.2a793w51mv6s.png",
+  }, {
+    pageId: 5,
+    sortId: 1,
+    title: "Gitee",
+    subtitle: "Github",
+    url: "https://gitee.com/",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/3.1fup2jujy7eo.png",
+  }, {
+    pageId: 6,
+    sortId: 1,
+    title: "Element-plus",
+    subtitle: "Element-plus",
+    url: "https://element-plus.gitee.io/#/zh-CN",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/8.432iuu0a69m0.png",
+  }, {
+    pageId: 7,
+    sortId: 1,
+    title: "hexo-theme-melody",
+    subtitle: "hexo-theme-melody",
+    url: "https://molunerfinn.com/hexo-theme-melody-doc/zh-Hans/quick-start.html",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/9.6gdf382bbao0.png",
   }, {
     pageId: 1,
     sortId: 2,
     title: "Github",
-    subtitle: "Song-QiEn  Github",
+    subtitle: `${AUTHOR}    Github`,
     url: "https://qianhuiya.github.io/",
-    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/avaer/1.3xuk0ktsviw0.jpg",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/2.2a793w51mv6s.png",
   },
   {
     pageId: 2,
     sortId: 2,
     title: "Gitee",
-    subtitle: "Song-QiEn  Gitee",
+    subtitle: `${AUTHOR}   Gitee`,
     url: "https://gitee.com/qianhuiya/",
-    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/avaer/3.24vg0vfmd7j4.jpg",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/3.1fup2jujy7eo.png",
+  },
+  {
+    pageId: 3,
+    sortId: 2,
+    title: "Coding",
+    subtitle: `${AUTHOR}   Coding`,
+    url: "https://qianhuiya.coding.net/public/",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/1.7d0l4t590s00.png",
+  }, {
+    pageId: 4,
+    sortId: 2,
+    title: "PicQh图床",
+    subtitle: `${AUTHOR}   PicQh图床`,
+    url: "https://coding-pages-bucket-3495601-8075853-6783-399747-1303851664.cos-website.ap-beijing.myqcloud.com",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/kavaer/1.3o4ilcabcrq0.png",
+  }, {
+    pageId: 5,
+    sortId: 2,
+    title: "一言",
+    subtitle: `${AUTHOR}   精彩句子~一言`,
+    url: "https://coding-pages-bucket-3495601-8075853-6855-401178-1303851664.cos-website.ap-beijing.myqcloud.com",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/10.3mcwppjkwvq0.png",
   }
 ]; // 网站分类列表，请按照API.md中'/getPages'接口中返回的data格式填写
 //无icon图标则为默认图标-
