@@ -36,8 +36,73 @@
         <div :class="['hello', { hello_bottom: flag }]">
           <div>{{ slogan[i] }}</div>
           <div class="hello_bottom_text">
-            <div>点击以访问 -</div>
-            <div class="print">{{ $config.BLOG_NAME }}</div>
+            <div>点击以访问   ~</div>
+            <div class="print">
+              &nbsp;{{ $config.AUTHOR }}
+              <svg style="margin-left:10px;"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.0"
+                width="44px"
+                height="44px"
+                viewBox="0 0 128 128"
+                xml:space="preserve"
+              >
+                <rect x="0" y="0" width="100%" height="100%" fill="none" />
+                <g>
+                  <path
+                    d="M64 0L40.08 21.9a10.98 10.98 0 0 0-5.05 8.75C34.37 44.85 64 60.63 64 60.63V0z"
+                    fill="red"
+                    fill-opacity="0.29"
+                  />
+                  <path
+                    d="M128 64l-21.88-23.9a10.97 10.97 0 0 0-8.75-5.05C83.17 34.4 67.4 64 67.4 64H128z"
+                    fill="blue"
+                    fill-opacity="0.38"
+                  />
+                  <path
+                    d="M63.7 69.73a110.97 110.97 0 0 1-5.04-20.54c-1.16-8.7.68-14.17.68-14.17h38.03s-4.3-.86-14.47 10.1c-3.06 3.3-19.2 24.58-19.2 24.58z"
+                    fill="green"
+                    fill-opacity="0.24"
+                  />
+                  <path
+                    d="M64 128l23.9-21.88a10.97 10.97 0 0 0 5.05-8.75C93.6 83.17 64 67.4 64 67.4V128z"
+                    fill="purple"
+                    fill-opacity="0.69"
+                  />
+                  <path
+                    d="M58.27 63.7a110.97 110.97 0 0 1 20.54-5.04c8.7-1.16 14.17.68 14.17.68v38.03s.86-4.3-10.1-14.47c-3.3-3.06-24.58-19.2-24.58-19.2z"
+                    fill="pink"
+                    fill-opacity="0.65"
+                  />
+                  <path
+                    d="M0 64l21.88 23.9a10.97 10.97 0 0 0 8.75 5.05C44.83 93.6 60.6 64 60.6 64H0z"
+                    fill="red"
+                    fill-opacity="0.58"
+                  />
+                  <path
+                    d="M64.3 58.27a110.97 110.97 0 0 1 5.04 20.54c1.16 8.7-.68 14.17-.68 14.17H30.63s4.3.86 14.47-10.1c3.06-3.3 19.2-24.58 19.2-24.58z"
+                    fill="red"
+                    fill-opacity="0.46"
+                  />
+                  <path
+                    d="M69.73 64.34a111.02 111.02 0 0 1-20.55 5.05c-8.7 1.14-14.15-.7-14.15-.7V30.65s-.86 4.3 10.1 14.5c3.3 3.05 24.6 19.2 24.6 19.2z"
+                    fill="blue"
+                    fill-opacity="0.15"
+                  />
+                  <circle cx="64" cy="64" r="2.03" />
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 64 64"
+                    to="-360 64 64"
+                    dur="2400ms"
+                    repeatCount="indefinite"
+                  ></animateTransform>
+                </g>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
@@ -99,7 +164,7 @@ export default {
     this.startTime = new Date();
     return {
       i: 0,
-      flagEquipment:"",
+      flagEquipment: "",
       flag: false, // 动画是否播放完毕
       slogan: [],
       imgUrls: [],
@@ -117,11 +182,12 @@ export default {
     },
   },
   methods: {
-    //App.vue
-isMobile() {
-	   	this.flagEquipment = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
-	   },
-goToBlog() {
+    isMobile() {
+      this.flagEquipment = navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+      );
+    },
+    goToBlog() {
       window.location.href = this.$config.BLOG_URL;
     },
     throttleFn(callback, delay) {
@@ -133,7 +199,6 @@ goToBlog() {
     },
     handleMouseWheel(e) {
       if (e.deltaY < 0) {
-        // 如果鼠标滚轮向上滚动
         if (!this.centerShow) {
           this.centerShow = true;
         } else {
@@ -173,15 +238,16 @@ goToBlog() {
     },
   },
   mounted() {
+    document.title = this.$config.AUTHOR +"’" + "的博客";
     this.isMobile();
     setTimeout(() => {
       this.flag = true;
     }, 1300);
     // 图片懒加载
-    if(!this.flagEquipment){
-          this.imgUrls = this.$config.BACKGROUND_IMG_URL;
-    }else{
-        this.imgUrls=this.$config.BACKGROUND_IMG_URL_PHONE;
+    if (!this.flagEquipment) {
+      this.imgUrls = this.$config.BACKGROUND_IMG_URL;
+    } else {
+      this.imgUrls = this.$config.BACKGROUND_IMG_URL_PHONE;
     }
     this.imgUrl = this.imgUrls[randomNum(0, this.imgUrls.length - 1)];
     var img = new Image();
@@ -244,7 +310,7 @@ goToBlog() {
       }
       .hello {
         color: #ffffff;
-        width: 18.75rem;
+        width: 24.75rem;
         text-align: center;
         position: absolute;
         transform: translate(-50%, -50%);
@@ -263,22 +329,26 @@ goToBlog() {
           border-top: 1px solid #fff;
           display: flex;
           justify-content: center;
+          align-items: center;
           .print {
-            width: 85px;
-            white-space: nowrap;
-            overflow: hidden;
-            -webkit-animation: qisong 3s steps(60, end) infinite;
-            animation: qisong 5s steps(50, end) infinite;
-          }
-          @-webkit-keyframes qisong {
-            from {
-              width: 0;
-            }
-          }
-          @keyframes qisong {
-            from {
-              width: 0;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //   width: 85px;
+            //   white-space: nowrap;
+            //   overflow: hidden;
+            //   -webkit-animation: qisong 3s steps(60, end) infinite;
+            //   animation: qisong 5s steps(50, end) infinite;
+            // }
+            // @-webkit-keyframes qisong {
+            //   from {
+            //     width: 0;
+            //   }
+            // }
+            // @keyframes qisong {
+            //   from {
+            //     width: 0;
+            //   }
           }
         }
       }

@@ -37,7 +37,7 @@
     </div>
     <div class="footer" v-if="$config.FOOTER_INFO">
       <i class="mdi mdi-fountain-pen-tip"></i> Designed By
-      <a :href="$config.LOGO_TOP_RIGHT[0].url">{{ $config.BLOG_NAME }}</a>
+      <a :href="$config.LOGO_TOP_RIGHT[0].url">{{ $config.AUTHOR }}</a>
     </div>
   </div>
 </template>
@@ -202,7 +202,7 @@ export default {
         transition: all 0.6s ease-in-out;
       }
       .active {
-        border-bottom: 2px solid rgb(236, 6, 217);
+        border-bottom: 2px solid rgb(34, 20, 235);
         color: rgba(0,0,0,1);
         font-size: 1.02rem;
       }
@@ -230,7 +230,7 @@ export default {
           background-color: rgba(255, 255, 255, 0.9);
           padding: 1rem;
           box-sizing: border-box;
-          border-radius: 0.5rem;
+          border-radius: 1rem;
           display: flex;
           align-items: center;
           height: 100%;
@@ -239,7 +239,7 @@ export default {
           transition: all 0.3s ease-in-out;
           &:hover {
             box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.1);
-            transform: scale(1.05);
+            transform: scale(1.1);
           }
           .left {
             width: 80%;

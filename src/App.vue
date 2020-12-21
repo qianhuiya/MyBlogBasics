@@ -11,7 +11,8 @@ export default {
   },
   created() {
     //this.stopF5Refresh();
-  },
+    console.log('%c 钱辉的博客 ⭐', 'color: #fff;font-size:20px;background-color:black;padding:200px;');
+     },
   methods: {
     stopF5Refresh() {
       document.onkeydown = function (e) {
