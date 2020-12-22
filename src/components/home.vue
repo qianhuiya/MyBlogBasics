@@ -6,7 +6,7 @@
       v-if="!flag"
       style="width: 100%; height: 100%; z-index: 999; position: absolute"
     ></div>
-
+    <div class="nowDate" v-if="flag">{{nowDate}}</div>
     <!-- 徽标 -->
     <div class="logo">
       <a
@@ -38,8 +38,9 @@
           <div class="hello_bottom_text">
             <div>点击以访问   ~</div>
             <div class="print">
-              &nbsp;{{ $config.AUTHOR }}
-              <svg style="margin-left:10px;"
+              {{ $config.AUTHOR }}
+            </div>
+            <svg 
                 xmlns:svg="http://www.w3.org/2000/svg"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -102,7 +103,6 @@
                   ></animateTransform>
                 </g>
               </svg>
-            </div>
           </div>
         </div>
       </div>
@@ -163,6 +163,7 @@ export default {
   data() {
     this.startTime = new Date();
     return {
+      nowDate:"",
       i: 0,
       flagEquipment: "",
       flag: false, // 动画是否播放完毕
@@ -235,7 +236,15 @@ export default {
     },
     stopPropagation(e) {
       e.stopPropagation();
-    },
+    },getNowDate(){
+      setInterval(()=>{
+        const date=new Date();
+        this.nowDate=this.$utils.formatDate(date)
+      },1)
+    }
+  },
+  created(){
+    this.getNowDate()
   },
   mounted() {
     document.title = this.$config.AUTHOR +"’" + "的博客";
@@ -269,6 +278,19 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  .nowDate{
+    position: absolute;
+    top:100px;
+    left:100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    color:#fff;
+    font-size: 2rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }
   .logo {
     position: absolute;
     top: 20px;
@@ -334,7 +356,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
-            //   width: 85px;
+            margin:0;
             //   white-space: nowrap;
             //   overflow: hidden;
             //   -webkit-animation: qisong 3s steps(60, end) infinite;
@@ -431,12 +453,16 @@ export default {
 }
 @media screen and (max-width: 700px) {
   #home {
+    .nowDate{
+      font-size: 1rem;
+      left:33.33%;
+    }
     .wrapper {
       .inner {
         .hello_bottom {
           .hello_bottom_text {
             .print {
-              width: 75px;
+              margin:0 5px;
             }
           }
         }

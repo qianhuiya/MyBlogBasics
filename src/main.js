@@ -6,6 +6,7 @@ import "../node_modules/@mdi/font/css/materialdesignicons.min.css"
 import "./assets/basics-js/animate"
 import "./assets/iconfont/iconfont.css"
 import axios from 'axios'
+import utils from "./utils/index"
 import VueAxios from 'vue-axios'
 import config from './assets/basics-js/config.js'
 
