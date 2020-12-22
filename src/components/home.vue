@@ -6,7 +6,8 @@
       v-if="!flag"
       style="width: 100%; height: 100%; z-index: 999; position: absolute"
     ></div>
-    <div class="nowDate" v-if="flag">{{nowDate}}</div>
+    <div class="nowDate" v-if="flag">{{nowDate}}
+    </div>
     <!-- 徽标 -->
     <div class="logo">
       <a
@@ -159,7 +160,6 @@ function randomNum(minNum, maxNum) {
 }
 import center from "../views/center.vue";
 export default {
-  name: "home",
   data() {
     this.startTime = new Date();
     return {
@@ -175,7 +175,7 @@ export default {
     };
   },
   components: {
-    center,
+    center
   },
   computed: {
     recordNumber() {
@@ -455,7 +455,11 @@ export default {
   #home {
     .nowDate{
       font-size: 1rem;
-      left:33.33%;
+      width:100vw;
+      position: absolute;
+      left:0;
+      display:flex;
+      justify-content: center;
     }
     .wrapper {
       .inner {
