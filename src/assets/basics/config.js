@@ -34,7 +34,8 @@ const BACKGROUND_IMG_URL_PHONE = [
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/5.436ra117dhq0.png",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/7.45kz4m2uq8c.jpg",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/8.1z5y85zosdog.png",
-  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/9.6arkg2uva8k0.png"
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/9.6arkg2uva8k0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/10.3ap23gslarc0.png"
 ]
 
 const SLOGAN = [  // Logo下方显示的标题
@@ -83,7 +84,7 @@ const PAGES_DATA = [
     sortId: 1,
     title: "CSDN",
     subtitle: "开发者社区",
-    url: "http://www.YourWebPage.com/",
+    url: "https://www.csdn.net/",
     icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/6.4fyhi367hb00.png",
   }, {
     pageId: 4,

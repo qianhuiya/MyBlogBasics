@@ -1,5 +1,5 @@
 {
-  "name": "song-QiEn",
+  "name": "qianhuiya",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@mdi/font": "^4.6.95",
-    "animate.css": "^3.7.0",
     "axios": "^0.19.0",
     "better-scroll": "^1.15.2",
     "core-js": "^2.6.5",

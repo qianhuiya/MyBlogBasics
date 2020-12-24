@@ -6,8 +6,7 @@
       v-if="!flag"
       style="width: 100%; height: 100%; z-index: 999; position: absolute"
     ></div>
-    <div class="nowDate" v-if="flag">{{nowDate}}
-    </div>
+    <div class="nowDate" v-if="flag">{{ nowDate }}</div>
     <!-- 徽标 -->
     <div class="logo">
       <a
@@ -35,75 +34,75 @@
           "
         />
         <div :class="['hello', { hello_bottom: flag }]">
-          <div>{{ slogan[i] }}</div>
+          <div>{{ slogan }}</div>
           <div class="hello_bottom_text">
-            <div>点击以访问   ~</div>
+            <div>点击以访问 ~</div>
             <div class="print">
               {{ $config.AUTHOR }}
             </div>
-            <svg 
-                xmlns:svg="http://www.w3.org/2000/svg"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                version="1.0"
-                width="44px"
-                height="44px"
-                viewBox="0 0 128 128"
-                xml:space="preserve"
-              >
-                <rect x="0" y="0" width="100%" height="100%" fill="none" />
-                <g>
-                  <path
-                    d="M64 0L40.08 21.9a10.98 10.98 0 0 0-5.05 8.75C34.37 44.85 64 60.63 64 60.63V0z"
-                    fill="red"
-                    fill-opacity="0.29"
-                  />
-                  <path
-                    d="M128 64l-21.88-23.9a10.97 10.97 0 0 0-8.75-5.05C83.17 34.4 67.4 64 67.4 64H128z"
-                    fill="blue"
-                    fill-opacity="0.38"
-                  />
-                  <path
-                    d="M63.7 69.73a110.97 110.97 0 0 1-5.04-20.54c-1.16-8.7.68-14.17.68-14.17h38.03s-4.3-.86-14.47 10.1c-3.06 3.3-19.2 24.58-19.2 24.58z"
-                    fill="green"
-                    fill-opacity="0.24"
-                  />
-                  <path
-                    d="M64 128l23.9-21.88a10.97 10.97 0 0 0 5.05-8.75C93.6 83.17 64 67.4 64 67.4V128z"
-                    fill="purple"
-                    fill-opacity="0.69"
-                  />
-                  <path
-                    d="M58.27 63.7a110.97 110.97 0 0 1 20.54-5.04c8.7-1.16 14.17.68 14.17.68v38.03s.86-4.3-10.1-14.47c-3.3-3.06-24.58-19.2-24.58-19.2z"
-                    fill="pink"
-                    fill-opacity="0.65"
-                  />
-                  <path
-                    d="M0 64l21.88 23.9a10.97 10.97 0 0 0 8.75 5.05C44.83 93.6 60.6 64 60.6 64H0z"
-                    fill="red"
-                    fill-opacity="0.58"
-                  />
-                  <path
-                    d="M64.3 58.27a110.97 110.97 0 0 1 5.04 20.54c1.16 8.7-.68 14.17-.68 14.17H30.63s4.3.86 14.47-10.1c3.06-3.3 19.2-24.58 19.2-24.58z"
-                    fill="red"
-                    fill-opacity="0.46"
-                  />
-                  <path
-                    d="M69.73 64.34a111.02 111.02 0 0 1-20.55 5.05c-8.7 1.14-14.15-.7-14.15-.7V30.65s-.86 4.3 10.1 14.5c3.3 3.05 24.6 19.2 24.6 19.2z"
-                    fill="blue"
-                    fill-opacity="0.15"
-                  />
-                  <circle cx="64" cy="64" r="2.03" />
-                  <animateTransform
-                    attributeName="transform"
-                    type="rotate"
-                    from="0 64 64"
-                    to="-360 64 64"
-                    dur="2400ms"
-                    repeatCount="indefinite"
-                  ></animateTransform>
-                </g>
-              </svg>
+            <svg
+              xmlns:svg="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              version="1.0"
+              width="44px"
+              height="44px"
+              viewBox="0 0 128 128"
+              xml:space="preserve"
+            >
+              <rect x="0" y="0" width="100%" height="100%" fill="none" />
+              <g>
+                <path
+                  d="M64 0L40.08 21.9a10.98 10.98 0 0 0-5.05 8.75C34.37 44.85 64 60.63 64 60.63V0z"
+                  fill="red"
+                  fill-opacity="0.29"
+                />
+                <path
+                  d="M128 64l-21.88-23.9a10.97 10.97 0 0 0-8.75-5.05C83.17 34.4 67.4 64 67.4 64H128z"
+                  fill="blue"
+                  fill-opacity="0.38"
+                />
+                <path
+                  d="M63.7 69.73a110.97 110.97 0 0 1-5.04-20.54c-1.16-8.7.68-14.17.68-14.17h38.03s-4.3-.86-14.47 10.1c-3.06 3.3-19.2 24.58-19.2 24.58z"
+                  fill="green"
+                  fill-opacity="0.24"
+                />
+                <path
+                  d="M64 128l23.9-21.88a10.97 10.97 0 0 0 5.05-8.75C93.6 83.17 64 67.4 64 67.4V128z"
+                  fill="purple"
+                  fill-opacity="0.69"
+                />
+                <path
+                  d="M58.27 63.7a110.97 110.97 0 0 1 20.54-5.04c8.7-1.16 14.17.68 14.17.68v38.03s.86-4.3-10.1-14.47c-3.3-3.06-24.58-19.2-24.58-19.2z"
+                  fill="pink"
+                  fill-opacity="0.65"
+                />
+                <path
+                  d="M0 64l21.88 23.9a10.97 10.97 0 0 0 8.75 5.05C44.83 93.6 60.6 64 60.6 64H0z"
+                  fill="red"
+                  fill-opacity="0.58"
+                />
+                <path
+                  d="M64.3 58.27a110.97 110.97 0 0 1 5.04 20.54c1.16 8.7-.68 14.17-.68 14.17H30.63s4.3.86 14.47-10.1c3.06-3.3 19.2-24.58 19.2-24.58z"
+                  fill="red"
+                  fill-opacity="0.46"
+                />
+                <path
+                  d="M69.73 64.34a111.02 111.02 0 0 1-20.55 5.05c-8.7 1.14-14.15-.7-14.15-.7V30.65s-.86 4.3 10.1 14.5c3.3 3.05 24.6 19.2 24.6 19.2z"
+                  fill="blue"
+                  fill-opacity="0.15"
+                />
+                <circle cx="64" cy="64" r="2.03" />
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 64 64"
+                  to="-360 64 64"
+                  dur="2400ms"
+                  repeatCount="indefinite"
+                ></animateTransform>
+              </g>
+            </svg>
           </div>
         </div>
       </div>
@@ -158,16 +157,18 @@ function randomNum(minNum, maxNum) {
       return 0;
   }
 }
+import axios from "axios";
 import center from "../views/center.vue";
 export default {
   data() {
     this.startTime = new Date();
     return {
-      nowDate:"",
+      nowDate: "",
       i: 0,
       flagEquipment: "",
       flag: false, // 动画是否播放完毕
-      slogan: [],
+      slogans: [], //自定义句子slogans[i]
+      slogan: "", //一言堂句子slogan
       imgUrls: [],
       imgUrl: "",
       centerShow: false, // 导航抽屉显示状态
@@ -175,7 +176,7 @@ export default {
     };
   },
   components: {
-    center
+    center,
   },
   computed: {
     recordNumber() {
@@ -183,6 +184,17 @@ export default {
     },
   },
   methods: {
+    hitokoto() {
+      axios
+        .get(this.$api.yiyan + `?c=d&c=e&c=l&c=j&c=k`)
+        .then((res) => {
+          const data = res.hitokoto;
+          this.slogan = data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     isMobile() {
       this.flagEquipment = navigator.userAgent.match(
         /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
@@ -236,18 +248,19 @@ export default {
     },
     stopPropagation(e) {
       e.stopPropagation();
-    },getNowDate(){
-      setInterval(()=>{
-        const date=new Date();
-        this.nowDate=this.$utils.formatDate(date)
-      },1)
-    }
+    },
+    getNowDate() {
+      setInterval(() => {
+        const date = new Date();
+        this.nowDate = this.$utils.formatDate(date);
+      }, 1);
+    },
   },
-  created(){
-    this.getNowDate()
+  created() {
+    this.getNowDate();
   },
   mounted() {
-    document.title = this.$config.AUTHOR +"’" + "的博客";
+    document.title = this.$config.AUTHOR + "’" + "的博客";
     this.isMobile();
     setTimeout(() => {
       this.flag = true;
@@ -264,8 +277,9 @@ export default {
     img.onload = () => {
       this.imgLoded = true;
     };
-    this.slogan = this.$config.SLOGAN;
-    this.i = randomNum(0, this.slogan.length - 1);
+    this.hitokoto(); //一言堂
+    //  this.slogans = this.$config.SLOGAN; //自定义句子
+    //  this.i = randomNum(0, this.slogans.length - 1);
   },
 };
 </script>
@@ -278,18 +292,19 @@ export default {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  .nowDate{
+  .nowDate {
     position: absolute;
-    top:100px;
-    left:100px;
+    top: 100px;
+    left: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     z-index: 9;
-    color:#fff;
+    color: #fff;
     font-size: 2rem;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
   .logo {
     position: absolute;
@@ -325,7 +340,7 @@ export default {
         position: absolute;
         transform: translate(-50%, -50%);
         transition: all 1s;
-        top: 0;
+        top: 0px;
       }
       .Q_logo_top {
         top: -3.2rem;
@@ -356,7 +371,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin:0;
+            margin-right: 5px;
             //   white-space: nowrap;
             //   overflow: hidden;
             //   -webkit-animation: qisong 3s steps(60, end) infinite;
@@ -453,12 +468,12 @@ export default {
 }
 @media screen and (max-width: 700px) {
   #home {
-    .nowDate{
+    .nowDate {
       font-size: 1rem;
-      width:100vw;
+      width: 100vw;
       position: absolute;
-      left:0;
-      display:flex;
+      left: 0;
+      display: flex;
       justify-content: center;
     }
     .wrapper {
@@ -466,7 +481,7 @@ export default {
         .hello_bottom {
           .hello_bottom_text {
             .print {
-              margin:0 5px;
+              margin: 0 5px;
             }
           }
         }
@@ -526,7 +541,7 @@ export default {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
   100% {
     transform: translateY(0);
