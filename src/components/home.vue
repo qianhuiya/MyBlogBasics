@@ -107,7 +107,6 @@
         </div>
       </div>
     </div>
-
     <!-- 上下滑动指示器 -->
     <div
       :class="['bottom', { bottom_show: flag }]"
@@ -122,7 +121,7 @@
       </div>
       <div class="bottom-info">Slide UP</div>
     </div>
-
+    <i class="fa fa-arrow-right togglePic"  @click="togglePic" v-if="togglePicsOne"></i>
     <!-- 备案号 -->
     <a
       class="record_number"
@@ -173,6 +172,7 @@ export default {
       imgUrl: "",
       centerShow: false, // 导航抽屉显示状态
       imgLoded: false, // 背景图片加载状态
+      togglePicsOne:false
     };
   },
   components: {
@@ -186,7 +186,7 @@ export default {
   methods: {
     hitokoto() {
       axios
-        .get(this.$api.yiyan + `?c=d&c=e&c=l&c=j&c=k`)
+        .get(this.$api.yiyan + `?c=d&c=e&c=f&c=g&c=h&c=i&c=l&c=j&c=k`)
         .then((res) => {
           const data = res.hitokoto;
           this.slogan = data;
@@ -255,6 +255,26 @@ export default {
         this.nowDate = this.$utils.formatDate(date);
       }, 1);
     },
+    togglePic() {
+      // 图片懒加载
+      if (!this.flagEquipment) {
+        this.imgUrls = this.$config.BACKGROUND_IMG_URL;
+      } else {
+        this.imgUrls = this.$config.BACKGROUND_IMG_URL_PHONE;
+      }
+      this.imgUrl = this.imgUrls[randomNum(0, this.imgUrls.length - 1)];
+      var img = new Image();
+      img.src = this.imgUrls[randomNum(0, this.imgUrls.length - 1)];
+      img.onload = () => {
+        this.imgLoded = true;
+        setTimeout(()=>{
+          this.togglePicsOne=true
+        },1000)
+      };
+    },
+    togglePicOne() {
+      this.togglePic();
+    },
   },
   created() {
     this.getNowDate();
@@ -265,18 +285,7 @@ export default {
     setTimeout(() => {
       this.flag = true;
     }, 1300);
-    // 图片懒加载
-    if (!this.flagEquipment) {
-      this.imgUrls = this.$config.BACKGROUND_IMG_URL;
-    } else {
-      this.imgUrls = this.$config.BACKGROUND_IMG_URL_PHONE;
-    }
-    this.imgUrl = this.imgUrls[randomNum(0, this.imgUrls.length - 1)];
-    var img = new Image();
-    img.src = this.imgUrls[randomNum(0, this.imgUrls.length - 1)];
-    img.onload = () => {
-      this.imgLoded = true;
-    };
+    this.togglePic();
     this.hitokoto(); //一言堂
     //  this.slogans = this.$config.SLOGAN; //自定义句子
     //  this.i = randomNum(0, this.slogans.length - 1);
@@ -360,6 +369,7 @@ export default {
         opacity: 1;
         top: 3.5rem;
         .hello_bottom_text {
+          cursor: pointer;
           font-size: 1rem;
           margin-top: 0.5rem;
           padding-top: 0.5rem;
@@ -409,6 +419,7 @@ export default {
     filter: blur(1px);
   }
   .bottom {
+    cursor: pointer;
     font-size: 2rem;
     position: absolute;
     color: #fff;
@@ -448,6 +459,14 @@ export default {
       bottom: 5%;
       height: 70%;
     }
+  }
+  .togglePic {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size:1.3rem;
+    color:#49b1f5;
   }
   .record_number {
     width: 100%;

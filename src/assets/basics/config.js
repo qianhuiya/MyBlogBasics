@@ -9,7 +9,7 @@ const LOGO_CENTER = "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/kavaer/4.ip
 
 //  已有图标库@mdi/font&font-awesome,如若找不到所要的图标,推荐iconfont阿里巴巴矢量图标库
 const LOGO_TOP_RIGHT = [    //右上角图标链接，留空不显示
-  { class: "fa fa fa-github", title: "github", url: "https://github.com/qianhuiya" },
+  { class: "fa fa-github", title: "github", url: "https://github.com/qianhuiya" },
   { class: "iconfont icon-gitee-fill-round", title: "gitee", url: "https://gitee.com/qianhuiya" }
 ]
 
@@ -21,9 +21,12 @@ const BACKGROUND_IMG_URL = [    // 背景图片url
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/3.4zsg5h2crz80.jpg",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/4.200h324qf96o.png",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/5.1drrjtv2h3vk.jpg",
-  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/6.2bo12ixgwvk0.png",
-  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/7.4d7bzgsdgvq0.png",
-  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/8.6dq7cz556f00.png"
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/6.6sxkddz62nk0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/7.5v6bmspf4uk0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/8.2jgr0sh2af40.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/9.3i0jq3com8s0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/10.5v17b4055rk0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/blog/11.58p8srttppo0.png"
 ];
 
 const BACKGROUND_IMG_URL_PHONE = [
@@ -32,10 +35,12 @@ const BACKGROUND_IMG_URL_PHONE = [
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/3.2vhw6a3rxay0.png",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/4.5sqhr7w4xpo0.png",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/5.436ra117dhq0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/6.1xj61dnmfaw0.jpg",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/7.45kz4m2uq8c.jpg",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/8.1z5y85zosdog.png",
   "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/9.6arkg2uva8k0.png",
-  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/10.3ap23gslarc0.png"
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/10.3ap23gslarc0.png",
+  "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/phone/11.3d7qronk8vc0.jpg"
 ]
 
 const SLOGAN = [  // Logo下方显示的标题
@@ -119,7 +124,7 @@ const PAGES_DATA = [
     sortId: 2,
     title: "Github",
     subtitle: `${AUTHOR}    Github`,
-    url: "https://qianhuiya.github.io/",
+    url: "https://github.com/qianhuiya",
     icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/2.2a793w51mv6s.png",
   },
   {
