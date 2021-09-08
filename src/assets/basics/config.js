@@ -2,7 +2,7 @@ const SERVE = false; // 是否使用线上服务器
 
 const HOST = ""; // 线上服务器地址，如果不使用请留空
 
-const BLOG_NAME = "Song-QiEn"; // 个人网站名字
+const BLOG_NAME = "钱辉"; // 个人网站名字
 
 const BASICS_LOGO = "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/kavaer/1.3o4ilcabcrq0.png" //引导页默认LOGO,此项添加需将下一项置为空,本地照片引用require
 const LOGO_CENTER = "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/kavaer/4.ip7pncglxio.png"; //更换引导页LOGO
@@ -62,8 +62,8 @@ const FOOTER_INFO = true; // 是否显示抽屉右下角的文字信息
 const BASICS_ICONFONT = "https://cdn.jsdelivr.net/gh/qianhuiya/picgo@main/avaer/4.49p04o5mdw20.png"//icon
 
 const SORT_DATA = [ // 网站分类列表，请按照API.md中'/getSort'接口中返回的data格式填写
-  { sortId: 1, title: "MyFavorite" },
-  { sortId: 2, title: "AboutMe" }
+  { sortId: 1, title: "导航" },
+  { sortId: 2, title: "常用" }
 ];
 
 const AUTHOR = "钱辉";
@@ -120,10 +120,31 @@ const PAGES_DATA = [
     url: "https://molunerfinn.com/hexo-theme-melody-doc/zh-Hans/quick-start.html",
     icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/9.6gdf382bbao0.png",
   }, {
+    pageId: 8,
+    sortId: 1,
+    title: "NeteaseCloudMusicApi",
+    subtitle: "NeteaseCloudMusicApi",
+    url: "https://neteasecloudmusicapi.vercel.app/",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/image.5bf0p4uu0xo0.png",
+  }, {
+    pageId: 9,
+    sortId: 1,
+    title: "Greasy Fork",
+    subtitle: "Greasy Fork",
+    url: "https://greasyfork.org/zh-CN/scripts",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/image.3jdojfpjjcs0.png",
+  }, {
+    pageId: 10,
+    sortId: 1,
+    title: "Hitokoto",
+    subtitle: "Hitokoto",
+    url: "https://hitokoto.cn/",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/image.2j9nt71mgtu0.png",
+  },  {
     pageId: 1,
     sortId: 2,
     title: "Github",
-    subtitle: `${AUTHOR}    Github`,
+    subtitle: `Github`,
     url: "https://github.com/qianhuiya",
     icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/2.2a793w51mv6s.png",
   },
@@ -131,7 +152,7 @@ const PAGES_DATA = [
     pageId: 2,
     sortId: 2,
     title: "Gitee",
-    subtitle: `${AUTHOR}   Gitee`,
+    subtitle: `Gitee`,
     url: "https://gitee.com/qianhuiya/",
     icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/3.1fup2jujy7eo.png",
   },
@@ -139,24 +160,38 @@ const PAGES_DATA = [
     pageId: 3,
     sortId: 2,
     title: "Coding",
-    subtitle: `${AUTHOR}   Coding`,
+    subtitle: `Coding`,
     url: "https://qianhuiya.coding.net/public/",
     icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/1.7d0l4t590s00.png",
   }, {
     pageId: 4,
     sortId: 2,
-    title: "PicQh图床",
-    subtitle: `${AUTHOR}   PicQh图床`,
-    url: "https://coding-pages-bucket-3495601-8075853-6783-399747-1303851664.cos-website.ap-beijing.myqcloud.com",
-    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/kavaer/1.3o4ilcabcrq0.png",
-  }, {
-    pageId: 5,
-    sortId: 2,
     title: "一言",
-    subtitle: `${AUTHOR}   精彩句子~一言`,
+    subtitle: `一言`,
     url: "https://coding-pages-bucket-3495601-8075853-6855-401178-1303851664.cos-website.ap-beijing.myqcloud.com",
     icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/10.3mcwppjkwvq0.png",
-  }
+  },{
+    pageId: 5,
+    sortId: 2,
+    title: "picx",
+    subtitle: `picx图床`,
+    url: "https://picx.xpoet.cn/",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/F@Z`JZ[5BTPU2)EE1SMM$IE.5bo2t6zvjzg0.png",
+  }, {
+    pageId: 6,
+    sortId: 2,
+    title: "电影",
+    subtitle: `vip电影&api`,
+    url: "https://vip.bljiex.com/",
+    icon: "https://vip.bljiex.com/favicon.ico",
+  }, {
+    pageId: 7,
+    sortId: 2,
+    title: "路过",
+    subtitle: `路过图床`,
+    url: "https://imgtu.com/",
+    icon: "https://cdn.jsdelivr.net/gh/qianhuiya/pics@main/icon/image.7e204o6que00.png",
+  },
 ]; // 网站分类列表，请按照API.md中'/getPages'接口中返回的data格式填写
 //无icon图标则为默认图标-
 

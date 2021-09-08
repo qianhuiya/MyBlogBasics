@@ -280,7 +280,7 @@ export default {
     this.getNowDate();
   },
   mounted() {
-    document.title = this.$config.AUTHOR + "’" + "的博客";
+    document.title = this.$config.AUTHOR + "       ♥         " + "Blog";
     this.isMobile();
     setTimeout(() => {
       this.flag = true;

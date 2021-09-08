@@ -175,13 +175,7 @@ export default {
 确保已安装 `npm` 以及安装好了项目依赖之后运行：
 
 ```
-$ npm run build
+$ npm run serve
 ```
 
 生成的文件将存放在 `/dist` 目录下，Enjoy!
-
-## Log | 更新日志
-
-2020.11.:
-
-- 变化：动态添加右上角徽标,每次进入切换不同背景图
